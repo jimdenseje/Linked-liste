@@ -66,7 +66,7 @@ namespace Linked_Liste
             return output;
         }
 
-        public void Sort()
+        public void Sort(string order)
         {
             int flips = 0;
             int oldflips = -1;
@@ -77,8 +77,10 @@ namespace Linked_Liste
                 oldflips = flips;
                 while (nextElement != null)
                 {
-                    if (nextElement.Data < currentElement.Data)
-                    {
+                    if (
+                        order == "ASC" && nextElement.Data < currentElement.Data
+                        || order == "DESC" && nextElement.Data > currentElement.Data
+                    ) {
                         int elementBuffer = nextElement.Data;
                         nextElement.Data = currentElement.Data;
                         currentElement.Data = elementBuffer;

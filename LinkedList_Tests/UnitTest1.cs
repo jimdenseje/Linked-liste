@@ -94,9 +94,23 @@ namespace LinkedList_Tests
             linkedList.AddElement(3);
             linkedList.AddElement(2);
             linkedList.AddElement(4);
-            linkedList.Sort();
+            linkedList.Sort("ASC");
 
             Assert.Equal("1,2,3,4,7", linkedList.Print());
+        }
+
+        [Fact]
+        public void LinkedListSortingDescendingElements()
+        {
+            LinkedList linkedList = new LinkedList();
+            linkedList.AddElement(1);
+            linkedList.AddElement(3);
+            linkedList.AddElement(7);
+            linkedList.AddElement(2);
+            linkedList.AddElement(4);
+            linkedList.Sort("DESC");
+
+            Assert.Equal("7,4,3,2,1", linkedList.Print());
         }
     }
 }
