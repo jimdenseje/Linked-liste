@@ -5,6 +5,11 @@ VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Linked liste", "Linked liste\Linked liste.csproj", "{6E0B2AC6-B31B-44A1-B7AD-7137EECC404D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkedList_Tests", "LinkedList_Tests\LinkedList_Tests.csproj", "{4C750AA1-3505-4C25-8868-6F162F0030A2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6E0B2AC6-B31B-44A1-B7AD-7137EECC404D} = {6E0B2AC6-B31B-44A1-B7AD-7137EECC404D}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +20,10 @@ Global
 		{6E0B2AC6-B31B-44A1-B7AD-7137EECC404D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E0B2AC6-B31B-44A1-B7AD-7137EECC404D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E0B2AC6-B31B-44A1-B7AD-7137EECC404D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C750AA1-3505-4C25-8868-6F162F0030A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C750AA1-3505-4C25-8868-6F162F0030A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C750AA1-3505-4C25-8868-6F162F0030A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C750AA1-3505-4C25-8868-6F162F0030A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
