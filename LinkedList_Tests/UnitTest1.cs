@@ -28,6 +28,7 @@ namespace LinkedList_Tests
         public void LinkedListHasMethodeToBeInilatiased()
         {
             LinkedList linkedList = new LinkedList();
+
             Assert.Null(linkedList.FirstElement);
         }
 
@@ -36,6 +37,7 @@ namespace LinkedList_Tests
         {
             LinkedList linkedList = new LinkedList();
             linkedList.AddElement(1);
+
             Assert.NotNull(linkedList.FirstElement);
         }
 
@@ -45,6 +47,7 @@ namespace LinkedList_Tests
             LinkedList linkedList = new LinkedList();
             linkedList.AddElement(1);
             linkedList.AddElement(2);
+
             Assert.NotNull(linkedList.FirstElement?.NextElement);
         }
 
@@ -55,6 +58,7 @@ namespace LinkedList_Tests
             linkedList.AddElement(1);
             linkedList.AddElement(2);
             linkedList.AddElement(3);
+
             Assert.Equal(3, linkedList.Count());
         }
 
@@ -79,6 +83,20 @@ namespace LinkedList_Tests
             linkedList.AddElement(3);
 
             Assert.Equal("1,2,3", linkedList.Print());
+        }
+
+        [Fact]
+        public void LinkedListSortingElements()
+        {
+            LinkedList linkedList = new LinkedList();
+            linkedList.AddElement(7);
+            linkedList.AddElement(1);
+            linkedList.AddElement(3);
+            linkedList.AddElement(2);
+            linkedList.AddElement(4);
+            linkedList.Sort();
+
+            Assert.Equal("1,2,3,4,7", linkedList.Print());
         }
     }
 }
