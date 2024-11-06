@@ -1,5 +1,6 @@
 using Microsoft.VisualStudio.TestPlatform.TestHost;
 using Linked_Liste;
+using System.Xml.Linq;
 
 namespace LinkedList_Tests
 {
@@ -111,6 +112,61 @@ namespace LinkedList_Tests
             linkedList.Sort("DESC");
 
             Assert.Equal("7,4,3,2,1", linkedList.Print());
+        }
+
+        [Fact]
+        public void LinkedListReverseOrder()
+        {
+            LinkedList linkedList = new LinkedList();
+            linkedList.AddElement(1);
+            linkedList.AddElement(3);
+            linkedList.AddElement(7);
+            linkedList.AddElement(2);
+            linkedList.AddElement(4);
+            linkedList.Reverse();
+
+            Assert.Equal("4,2,7,3,1", linkedList.Print());
+        }
+
+        [Fact]
+        public void LinkedListFindSpecificElement()
+        {
+            LinkedList linkedList = new LinkedList();
+            linkedList.AddElement(1);
+            linkedList.AddElement(3);
+            linkedList.AddElement(7);
+            linkedList.AddElement(2);
+            linkedList.AddElement(4);
+
+            Assert.True(linkedList.Exists(3));
+        }
+
+        [Fact]
+        public void LinkedListDeleteSpecificElement()
+        {
+            LinkedList linkedList = new LinkedList();
+            linkedList.AddElement(1);
+            linkedList.AddElement(3);
+            linkedList.AddElement(7);
+            linkedList.AddElement(2);
+            linkedList.AddElement(4);
+            linkedList.DeleteElement(7);
+
+            Assert.Equal("1,3,2,4", linkedList.Print());
+        }
+
+        [Fact]
+        public void LinkedListDeleteSpecificElementLast()
+        {
+            LinkedList linkedList = new LinkedList();
+            linkedList.AddElement(1);
+            linkedList.AddElement(3);
+            linkedList.AddElement(7);
+            linkedList.AddElement(2);
+            linkedList.AddElement(4);
+            linkedList.DeleteElement(4);
+
+            Assert.Equal("1,3,7,2", linkedList.Print());
         }
     }
 }
