@@ -23,38 +23,27 @@ namespace Linked_Liste
             else
             {
                 Element? pointer = FirstElement;
-                while (true)
+                while (pointer.NextElement != null)
                 {
-                    if (pointer.NextElement == null)
-                    {
-                        pointer.NextElement = element;
-                        break;
-                    }
                     pointer = pointer.NextElement;
                 }
+                pointer.NextElement = element;
             }
         }
 
         public int Count() {
             int count = 0;
-            if (FirstElement == null)
-            {
-                return count;
-            }
-            else
+            if (FirstElement != null)
             {
                 count++;
                 Element? pointer = FirstElement;
-                while (true)
+                while (pointer.NextElement != null)
                 {
-                    if (pointer.NextElement == null)
-                    {
-                        return count;
-                    }
                     pointer = pointer.NextElement;
                     count++;
                 }
             }
+            return count;
         }
 
         public void Remove()
@@ -64,24 +53,17 @@ namespace Linked_Liste
 
         public string Print() {
             string output = "";
-            if (FirstElement == null)
-            {
-                return output;
-            }
-            else
+            if (FirstElement != null)
             {
                 output += FirstElement.Data;
                 Element? pointer = FirstElement;
-                while (true)
+                while (pointer.NextElement != null)
                 {
-                    if (pointer.NextElement == null)
-                    {
-                        return output;
-                    }
                     pointer = pointer.NextElement;
                     output += "," + pointer.Data;
                 }
             }
+            return output;
         }
     }
 }
