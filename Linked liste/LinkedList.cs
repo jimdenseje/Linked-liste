@@ -96,7 +96,7 @@ namespace Linked_Liste
             int lastElementPos = Count() -1;
             int elementPos = 0;
 
-            while (lastElementPos != 0)
+            while (lastElementPos > 0 )
             {
                 Element? currentElement = FirstElement;
                 Element? nextElement = FirstElement?.NextElement;

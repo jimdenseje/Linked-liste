@@ -68,6 +68,14 @@ namespace LinkedList_Tests
         }
 
         [Fact]
+        public void LinkedListCountEmpty()
+        {
+            LinkedList linkedList = new LinkedList();
+            
+            Assert.Equal(0, linkedList.Count());
+        }
+
+        [Fact]
         public void LinkedListRemoveElements()
         {
             LinkedList linkedList = new LinkedList();
@@ -116,6 +124,15 @@ namespace LinkedList_Tests
             linkedList.Sort(Order.DESC);
 
             Assert.Equal("7,4,3,2,1", linkedList.Print());
+        }
+
+        [Fact]
+        public void LinkedListReverseOrderEmptyList()
+        {
+            LinkedList linkedList = new LinkedList();
+            linkedList.Reverse();
+
+            Assert.Equal(0, linkedList.Count());
         }
 
         [Fact]
@@ -171,6 +188,15 @@ namespace LinkedList_Tests
             linkedList.DeleteElement(4);
 
             Assert.Equal("1,3,7,2", linkedList.Print());
+        }
+
+        [Fact]
+        public void OrderEmptyList()
+        {
+            LinkedList linkedList = new LinkedList();
+            linkedList.Sort(Order.ASC);
+
+            Assert.Equal(0, linkedList.Count());
         }
 
     }
