@@ -9,15 +9,21 @@ public class Program
         linkedList.AddElement(7);
         linkedList.AddElement(2);
         linkedList.AddElement(4);
+        Console.WriteLine("LinkedList: Data Init");
         Console.WriteLine(linkedList.Print());
+        Console.WriteLine();
 
         linkedList.Reverse();
+        Console.WriteLine("LinkedList: Reverse");
         Console.WriteLine(linkedList.Print());
+        Console.WriteLine();
 
         linkedList.Sort(Order.DESC);
+        Console.WriteLine("LinkedList: Sort(DESC)");
         Console.WriteLine(linkedList.Print());
-
         Console.WriteLine();
+
+        Console.WriteLine("LinkedList: Print (Key: Value)");
         string stringlist = linkedList.Print();
         string buffer = "";
         int key = 0;
