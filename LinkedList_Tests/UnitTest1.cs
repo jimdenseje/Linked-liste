@@ -59,6 +59,10 @@ namespace LinkedList_Tests
             linkedList.AddElement(1);
             linkedList.AddElement(2);
             linkedList.AddElement(3);
+            linkedList.AddElement(4);
+            linkedList.DeleteElement(4);
+            linkedList.AddElement(5);
+            linkedList.DeleteElement(3);
 
             Assert.Equal(3, linkedList.Count());
         }
@@ -95,7 +99,7 @@ namespace LinkedList_Tests
             linkedList.AddElement(3);
             linkedList.AddElement(2);
             linkedList.AddElement(4);
-            linkedList.Sort("ASC");
+            linkedList.Sort(Order.ASC);
 
             Assert.Equal("1,2,3,4,7", linkedList.Print());
         }
@@ -109,7 +113,7 @@ namespace LinkedList_Tests
             linkedList.AddElement(7);
             linkedList.AddElement(2);
             linkedList.AddElement(4);
-            linkedList.Sort("DESC");
+            linkedList.Sort(Order.DESC);
 
             Assert.Equal("7,4,3,2,1", linkedList.Print());
         }

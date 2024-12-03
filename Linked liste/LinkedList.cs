@@ -7,9 +7,16 @@ using System.Threading.Tasks;
 
 namespace Linked_Liste
 {
+    public enum Order
+    {
+        ASC,
+        DESC
+    }
+
     public class LinkedList
     {
         public Element? FirstElement {  get; set; }
+        private int _count = 0;
 
         public void AddElement(int item)
         {
@@ -29,26 +36,17 @@ namespace Linked_Liste
                 }
                 pointer.NextElement = element;
             }
+            _count++;
         }
 
         public int Count() {
-            int count = 0;
-            if (FirstElement != null)
-            {
-                count++;
-                Element? pointer = FirstElement;
-                while (pointer.NextElement != null)
-                {
-                    pointer = pointer.NextElement;
-                    count++;
-                }
-            }
-            return count;
+            return _count;
         }
 
         public void Remove()
         {
             FirstElement = null;
+            _count = 0;
         }
 
         public string Print() {
@@ -66,7 +64,7 @@ namespace Linked_Liste
             return output;
         }
 
-        public void Sort(string order)
+        public void Sort(Order order)
         {
             int flips = 0;
             int oldflips = -1;
@@ -78,8 +76,8 @@ namespace Linked_Liste
                 while (nextElement != null)
                 {
                     if (
-                        order == "ASC" && nextElement.Data < currentElement.Data
-                        || order == "DESC" && nextElement.Data > currentElement.Data
+                        order == Order.ASC && nextElement.Data < currentElement.Data
+                        || order == Order.DESC && nextElement.Data > currentElement.Data
                     ) {
                         int elementBuffer = nextElement.Data;
                         nextElement.Data = currentElement.Data;
@@ -92,6 +90,7 @@ namespace Linked_Liste
                 }
             }
         }
+
         public void Reverse()
         {
             int lastElementPos = Count() -1;
@@ -150,9 +149,6 @@ namespace Linked_Liste
                 Element? pointer = FirstElement;
                 Element? preElementpointer = pointer;
 
-                //Element element = new Element();
-                //element.Data = 99;
-                //FirstElement = element;
                 if (pointer.Data == item)
                 {
                     if (pointer.NextElement != null) 
@@ -163,6 +159,7 @@ namespace Linked_Liste
                     {
                         FirstElement = null;
                     }
+                    _count--;
                     return true;
                 }
                 while (pointer != null)
@@ -178,6 +175,7 @@ namespace Linked_Liste
                         {
                             preElementpointer.NextElement = null;
                         }
+                        _count--;
                         return true;
                     }
 
